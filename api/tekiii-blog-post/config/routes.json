@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/tekiii-blog-posts",
+      "handler": "tekiii-blog-post.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/tekiii-blog-posts/count",
+      "handler": "tekiii-blog-post.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/tekiii-blog-posts/:id",
+      "handler": "tekiii-blog-post.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/tekiii-blog-posts",
+      "handler": "tekiii-blog-post.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/tekiii-blog-posts/:id",
+      "handler": "tekiii-blog-post.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/tekiii-blog-posts/:id",
+      "handler": "tekiii-blog-post.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

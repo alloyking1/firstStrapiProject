@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tekiii",
+  "info": {
+    "name": "TekiiiBlogPost"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true,
+      "default": "2020-11-19T17:00:00.000Z"
+    },
+    "category": {
+      "via": "tekiii_blog_posts",
+      "model": "category"
+    }
+  }
+}
