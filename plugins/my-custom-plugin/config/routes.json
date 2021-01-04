@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/",
+      "handler": "my-custom-plugin.index",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
