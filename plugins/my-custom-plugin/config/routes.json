@@ -2,7 +2,7 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/",
+      "path": "/email",
       "handler": "my-custom-plugin.index",
       "config": {
         "policies": []

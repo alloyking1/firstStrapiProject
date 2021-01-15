@@ -1,25 +1,23 @@
 
 import React, { Component } from 'react';
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+const axios = require('axios');
 
 class App extends Component {
     constructor(props){
         super(props);
-        this.state = {value: ''};
+        this.state = {value: '', data: '', data2:''};
     }
 
     async handleChange (event) {   
-        // this.setState({value: event.target.value});
+    //   this.data = await axios.get('http://localhost:1337/article-categories/count');
+      this.data2 = await axios.get('http://localhost:1337/my-custom-plugin/email');
 
-        await strapi.plugins['email'].services.email.send({
-        to: 'alloyking1@gmail.com',
-        from: 'admin@strapi.io',
-        subject: 'testing email',
-        text: `i am testing this email sending feature`,
-      });
+    //   this.data = await ctx.request("/email", {
+    //     method: "GET"
+    //   });
 
-      await console.log("email sent");
+    //   await console.log(this.data);
+      await console.log(this.data2);
     }
     
     render() {
