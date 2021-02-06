@@ -8,16 +8,21 @@ class App extends Component {
         this.state = {value: '', data: '', data2:''};
     }
 
-    async handleChange (event) {   
-    //   this.data = await axios.get('http://localhost:1337/article-categories/count');
-      this.data2 = await axios.get('http://localhost:1337/my-custom-plugin/email');
+    async handleChange (event) {
 
-    //   this.data = await ctx.request("/email", {
-    //     method: "GET"
-    //   });
+        // this.value = await strapi.plugins['email'].services.email.send({
+        //     to: 'alloyking1@gmail.com',
+        //     from: 'admin@strapi.io',
+        //     subject: 'testing email',
+        //     text: `i am testing this email sending feature`,
+        // });
 
-    //   await console.log(this.data);
-      await console.log(this.data2);
+        console.log(strapi.plugins)
+
+        //   this.data = await axios.get('http://localhost:1337/article-categories/count');
+        // this.data2 = await axios.get('http://localhost:1337/my-custom-plugin/email');
+
+        //   await console.log(this.data);
     }
     
     render() {
@@ -36,7 +41,7 @@ class App extends Component {
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                         
                     </div>
-                    <button type="submit" class="btn btn-primary">Sign in</button>
+                    <button type="submit" class="btn btn-primary">Send Email</button>
                 </form>
                 
             </div>
