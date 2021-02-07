@@ -2,6 +2,14 @@
   "routes": [
     {
       "method": "GET",
+      "path": "/email",
+      "handler": "Email.index",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
       "path": "/articles",
       "handler": "articles.find",
       "config": {
