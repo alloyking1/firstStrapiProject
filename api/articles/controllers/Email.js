@@ -6,5 +6,10 @@ module.exports = {
             subject: 'testing email',
             text: `i am testing this email sending feature`,
         });
+
+        // Send 200 `ok`
+        await ctx.send({
+        message: 'email sent successfully'
+        });
     }
 }

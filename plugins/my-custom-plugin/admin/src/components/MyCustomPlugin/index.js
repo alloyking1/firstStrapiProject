@@ -5,24 +5,21 @@ const axios = require('axios');
 class App extends Component {
     constructor(props){
         super(props);
-        this.state = {value: '', data: '', data2:''};
+        this.state = {emailAddress: '', emailBody: ''};
     }
 
-    async handleChange (event) {
+    handleChange = (event) => {
 
-        this.value = await strapi.plugins.email.services.email.send({
-            to: 'alloyking1@gmail.com',
-            from: 'admin@strapi.io',
-            subject: 'testing email',
-            text: `i am testing this email sending feature`,
-        });
+        alert('An essay was submitted: ' + this.state.emailAddress + ' ' + this.state.emailBody);
+        event.preventDefault();
+    }
 
-        console.log("email sent")
+    bindEmailEvent = (event) => {
+        this.setState({emailAddress: event.target.value});
+    }
 
-        //   this.data = await axios.get('http://localhost:1337/article-categories/count');
-        // this.data2 = await axios.get('http://localhost:1337/my-custom-plugin/email');
-
-        //   await console.log(this.data);
+    bindBodyEvent = (event) => {
+        this.setState({emailBody:event.target.value})
     }
     
     render() {
@@ -31,14 +28,14 @@ class App extends Component {
                 <h2>My Email list plugin</h2>
                 <p>{this.state.value}</p>
 
-                <form>
+                <form onSubmit={this.handleChange}>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Email address</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" onChange={this.handleChange}/>
+                        <input type="email" class="form-control" value={this.state.emailAddress} onChange={this.bindEmailEvent} placeholder="name@example.com"/>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Example textarea</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" value={this.state.emailBody} onChange={this.bindBodyEvent} rows="3"></textarea>
                         
                     </div>
                     <button type="submit" class="btn btn-primary">Send Email</button>
