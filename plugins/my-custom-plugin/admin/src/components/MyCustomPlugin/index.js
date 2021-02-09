@@ -9,8 +9,15 @@ class App extends Component {
     }
 
     handleChange = (event) => {
-
-        alert('An essay was submitted: ' + this.state.emailAddress + ' ' + this.state.emailBody);
+        axios.get('http://localhost:1337/email')
+        axios.post('http://localhost:1337/email/create', {
+            emailAddress: this.state.emailAddress,
+            emailBody: this.state.emailBody
+        }).then((response) => {
+                console.log(response);
+            }, (error) => {
+                console.log(error);
+            });
         event.preventDefault();
     }
 

@@ -1,6 +1,14 @@
 {
   "routes": [
     {
+      "method": "POST",
+      "path": "/email/create",
+      "handler": "Email.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "GET",
       "path": "/email",
       "handler": "Email.index",
