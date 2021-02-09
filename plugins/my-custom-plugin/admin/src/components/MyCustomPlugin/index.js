@@ -9,7 +9,7 @@ class App extends Component {
     }
 
     handleChange = (event) => {
-        axios.get('http://localhost:1337/email')
+        
         axios.post('http://localhost:1337/email/create', {
             emailAddress: this.state.emailAddress,
             emailBody: this.state.emailBody
