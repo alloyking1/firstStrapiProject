@@ -18,6 +18,8 @@ class App extends Component {
             }, (error) => {
                 console.log(error);
             });
+            
+        strapi.notification.success('Email sent successfully!');
         event.preventDefault();
     }
 
@@ -45,7 +47,7 @@ class App extends Component {
                         <textarea class="form-control" value={this.state.emailBody} onChange={this.bindBodyEvent} rows="3"></textarea>
                         
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Email</button>
+                    <button type="submit" class="btn btn-primary p-3">Send Email</button>
                 </form>
                 
             </div>
